@@ -502,6 +502,7 @@ transition={{
     fontSize: "54px",
     fontWeight: "900",
     lineHeight: 1.28,
+    overflow:visible,
     background: "linear-gradient(135deg,#ffffff,#a5b4fc,#60a5fa)",
     WebkitBackgroundClip: "text",
     WebkitTextFillColor: "transparent",
