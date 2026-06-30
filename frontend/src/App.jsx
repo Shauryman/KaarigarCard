@@ -398,18 +398,24 @@ pdf.text(new Date().toLocaleDateString("en-IN"), valueX, 175)
         transition={{
           delay: 0.6,
         }}
-        style={{
-          marginTop: "28px",
-          fontSize: "60px",
-          fontWeight: "900",
-           lineHeight: "1.50",
-           overflow: "visible",
-          
-          background:
-            "linear-gradient(135deg,#ffffff,#a5b4fc,#60a5fa)",
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent",
-        }}
+       style={{
+  marginTop: "10px",
+  marginBottom: "10px",
+
+  fontSize: "64px",
+  fontWeight: "900",
+
+  lineHeight: "1.15",
+  letterSpacing: "-2px",
+
+  textAlign: "center",
+  whiteSpace: "nowrap",
+
+  background:
+    "linear-gradient(135deg,#ffffff,#a5b4fc,#60a5fa)",
+  WebkitBackgroundClip: "text",
+  WebkitTextFillColor: "transparent",
+}}
       >
         KaarigarCard
       </motion.div>
