@@ -38,7 +38,7 @@ function FloatingCircles() {
     { size: 250, top: "75%", left: "15%", delay: 0.5 },
   ]
   return (
-    <div style={{ position: "fixed", inset: 0, overflow: "hidden", zIndex: 0, pointerEvents: "none" }}>
+    <div style={{ position: "fixed", inset: 0, overflow: "visible", zIndex: 0, pointerEvents: "none" }}>
       {circles.map((c, i) => (
         <motion.div
           key={i}
