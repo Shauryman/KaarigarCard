@@ -402,7 +402,7 @@ pdf.text(new Date().toLocaleDateString("en-IN"), valueX, 175)
           marginTop: "28px",
           fontSize: "60px",
           fontWeight: "900",
-           lineHeight: "1.75",
+           lineHeight: "1.50",
            overflow: "visible",
           
           background:
