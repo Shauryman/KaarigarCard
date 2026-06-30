@@ -403,7 +403,6 @@ pdf.text(new Date().toLocaleDateString("en-IN"), valueX, 175)
           fontSize: "60px",
           fontWeight: "900",
            lineHeight: "2.25",
-           paddingBottom: "12px",
            overflow: "visible",
            width: "100%",
            textAlign: "center",
