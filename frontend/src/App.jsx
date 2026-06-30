@@ -66,9 +66,9 @@ export default function App() {
   const [file, setFile] = useState(null)
   const [preview, setPreview] = useState(null)
   const [result, setResult] = useState(null)
-  const [loading, setLoading] = useState(false)
-  const [logoExpanded, setLogoExpanded] = useState(false)
-  const [error, setError] = useState(null)
+ const [loading, setLoading] = useState(false)
+const [showIntro, setShowIntro] = useState(true)
+const [error, setError] = useState(null)
 
   const typingTexts = [
     "Show your work...",
@@ -78,19 +78,13 @@ export default function App() {
   ]
   const typedText = useTypingEffect(typingTexts)
   useEffect(() => {
-  const t1 = setTimeout(() => {
-    setLogoExpanded(true)
-  }, 1000)
+  const timer = setTimeout(() => {
+    setShowIntro(false)
+  }, 2200)
 
-  const t2 = setTimeout(() => {
-    setLogoExpanded(false)
-  }, 2500)
-
-  return () => {
-    clearTimeout(t1)
-    clearTimeout(t2)
-  }
+  return () => clearTimeout(timer)
 }, [])
+  
 
   const glassStyle = {
     background: "rgba(255,255,255,0.05)",
@@ -349,10 +343,104 @@ pdf.text(new Date().toLocaleDateString("en-IN"), valueX, 175)
       <FloatingCircles />
 
       <div style={{ position: "relative", zIndex: 10, maxWidth: "600px", width: "100%", margin: "0 auto", padding: "40px 20px" }}>
+        <FloatingCircles />
+
+<AnimatePresence>
+  {showIntro && (
+    <motion.div
+      initial={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.8 }}
+      style={{
+        position: "fixed",
+        inset: 0,
+        zIndex: 9999,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "column",
+        background:
+          "linear-gradient(135deg,#0f0c29,#302b63,#24243e)",
+      }}
+    >
+      <motion.img
+        src={logoImg}
+        initial={{
+          scale: 0.3,
+          opacity: 0,
+        }}
+        animate={{
+          scale: 1,
+          opacity: 1,
+        }}
+        transition={{
+          duration: 1,
+          ease: "easeOut",
+        }}
+        style={{
+          width: "170px",
+          height: "170px",
+          objectFit: "contain",
+          filter:
+            "drop-shadow(0 0 35px rgba(124,58,237,.6))",
+        }}
+      />
+
+      <motion.div
+        initial={{
+          opacity: 0,
+          y: 25,
+        }}
+        animate={{
+          opacity: 1,
+          y: 0,
+        }}
+        transition={{
+          delay: 0.6,
+        }}
+        style={{
+          marginTop: "28px",
+          fontSize: "60px",
+          fontWeight: "900",
+          background:
+            "linear-gradient(135deg,#ffffff,#a5b4fc,#60a5fa)",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+        }}
+      >
+        KaarigarCard
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1 }}
+        style={{
+          marginTop: "14px",
+          color: "rgba(255,255,255,.65)",
+          fontSize: "18px",
+        }}
+      >
+        AI Powered Skill Verification Platform
+      </motion.div>
+    </motion.div>
+  )}
+</AnimatePresence>
+
+<div
+  style={{
+    position: "relative",
+    zIndex: 10,
+    maxWidth: "600px",
+    width: "100%",
+    margin: "0 auto",
+    padding: "40px 20px",
+  }}
+></div>
         <AnimatePresence mode="wait">
 
           {/* HOME PAGE */}
-          {page === "home" && (
+          {!showIntro && page === "home" && (
             <motion.div
               key="home"
               initial={{ opacity: 0, y: 40 }}
@@ -377,14 +465,15 @@ pdf.text(new Date().toLocaleDateString("en-IN"), valueX, 175)
  <motion.img
   src={logoImg}
   alt="logo"
-  onMouseEnter={() => setLogoExpanded(true)}
-  onMouseLeave={() => setLogoExpanded(false)}
-  animate={{
-    scale: logoExpanded ? 7 : 1,
-    x: logoExpanded ? window.innerWidth / 2 - 110 : 0,
-    y: logoExpanded ? 180 : 0,
-    rotate: logoExpanded ? 360 : 0,
-  }}
+ animate={{
+  y: [0, -6, 0],
+}}
+
+transition={{
+  duration: 4,
+  repeat: Infinity,
+  ease: "easeInOut",
+}}
   transition={{
     duration: 1,
     ease: "easeInOut",
