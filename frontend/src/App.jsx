@@ -990,6 +990,10 @@ marginBottom:"35px"
 style={{
 fontSize:"34px",
 fontWeight:"900",
+  lineHeight: "1.3",
+  paddingBottom: "8px",
+
+  overflow: "visible",
 background:
 "linear-gradient(135deg,#ffffff,#a5b4fc,#60a5fa)",
 WebkitBackgroundClip:"text",
