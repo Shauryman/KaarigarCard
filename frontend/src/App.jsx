@@ -402,6 +402,9 @@ pdf.text(new Date().toLocaleDateString("en-IN"), valueX, 175)
           marginTop: "28px",
           fontSize: "60px",
           fontWeight: "900",
+           width: "100%",
+           textAlign: "center",
+           whiteSpace: "nowrap",
           background:
             "linear-gradient(135deg,#ffffff,#a5b4fc,#60a5fa)",
           WebkitBackgroundClip: "text",
