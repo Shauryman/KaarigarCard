@@ -141,7 +141,7 @@ export default function App() {
     const formData = new FormData()
     formData.append("file", file)
     try {
-      const response = await fetch("http://localhost:8000/analyze", {
+      const response = await fetch("https://kaarigarcard.onrender.com/analyze", {
         method: "POST",
         body: formData
       })
