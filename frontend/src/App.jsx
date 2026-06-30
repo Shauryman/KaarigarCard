@@ -404,9 +404,7 @@ pdf.text(new Date().toLocaleDateString("en-IN"), valueX, 175)
           fontWeight: "900",
            lineHeight: "2.25",
            overflow: "visible",
-           width: "100%",
-           textAlign: "center",
-           whiteSpace: "nowrap",
+          
           background:
             "linear-gradient(135deg,#ffffff,#a5b4fc,#60a5fa)",
           WebkitBackgroundClip: "text",
