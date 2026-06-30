@@ -38,7 +38,7 @@ function FloatingCircles() {
     { size: 250, top: "75%", left: "15%", delay: 0.5 },
   ]
   return (
-    <div style={{ position: "fixed", inset: 0, overflow: "visible", zIndex: 0, pointerEvents: "none" }}>
+    <div style={{ position: "fixed", inset: 0, overflow: "hidden", zIndex: 0, pointerEvents: "none" }}>
       {circles.map((c, i) => (
         <motion.div
           key={i}
@@ -405,8 +405,10 @@ pdf.text(new Date().toLocaleDateString("en-IN"), valueX, 175)
   fontSize: "64px",
   fontWeight: "900",
 
-  lineHeight: "1.15",
-  letterSpacing: "-2px",
+  lineHeight: "1.25",
+  letterSpacing: "-1px",
+  paddingBottom: "10px",
+display: "inline-block",
 
   textAlign: "center",
   whiteSpace: "nowrap",
