@@ -868,28 +868,26 @@ marginBottom:"35px"
 }}
 >
 
-<motion.div
-
-animate={{
-scale:[1,1.08,1]
-}}
-
-transition={{
-duration:2,
-repeat:Infinity
-}}
-
-style={{
-fontSize:"72px",
-marginBottom:"18px"
-}}
-
->
-
-🏆
-
-</motion.div>
-
+<motion.img
+  src={logoImg}
+  alt="KaarigarCard Logo"
+  animate={{
+    y: [0, -5, 0],
+    scale: [1, 1.05, 1],
+  }}
+  transition={{
+    duration: 3,
+    repeat: Infinity,
+    ease: "easeInOut",
+  }}
+  style={{
+    width: "90px",
+    height: "90px",
+    objectFit: "contain",
+    marginBottom: "18px",
+    filter: "drop-shadow(0 0 20px rgba(124,58,237,.45))",
+  }}
+/>
 <div
 style={{
 fontSize:"34px",
